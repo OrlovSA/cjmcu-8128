@@ -1,19 +1,15 @@
-from machine import Pin, I2C
-from lib.CCS811 import CCS811
-from lib.HDC1000 import HDC1000
-from lib.BMP280 import BMP280
+from CCS811 import CCS811
+from HDC1000 import HDC1000
+from BMP280 import BMP280
 from time import sleep
 
-""""
-default pins Hardware I2C bus (18, 19) ESP Wroom 32
-"""
+
 class CJMCU_8128(object):
     #[64, 90, 118] 64 - HDC1000, 90 - CCS811, 118 - BMP280
-    def __init__(self, identifier=1, scl=18, sda=19, freq=9600):
-        i2c = I2C(identifier, scl=Pin(scl), sda=Pin(sda), freq=freq)
-        self.ccs811 = CCS811(i2c, 90)  
-        self.hdc1000 = HDC1000(i2c, 64)  
-        self.bmp280 = BMP280(i2c, 118)
+    def __init__(self, I2C):
+        self.ccs811 = CCS811(I2C, 90)  
+        self.hdc1000 = HDC1000(I2C, 64)  
+        self.bmp280 = BMP280(I2C, 118)
         self.old_t = 0
         self.old_h = 0
         self.range_correction = 2
@@ -54,19 +50,21 @@ class CJMCU_8128(object):
 
 
 # def main():
-    """
-    hdc1000_c_temperature: 33.04352
-    hdc1000_f_temperature: 91.47834
-    hdc1000_f_temperature: 38.04321
-    ccs811_eCO2: 426
-    ccs811_tVOC: 3
-    bmp280_c_temperature: 32.87
-    bmp280_pressure: 99783
-    bmp280_mm_pressure: 748.4338
-    bmp280_altitude: 129.0936
-    ****************************************************************************************************
-    """
-#     cjmcu_8128 = CJMCU_8128(1, 18, 19, 9600)
+#     from machine import Pin, I2C
+#     """
+#     hdc1000_c_temperature: 33.04352
+#     hdc1000_f_temperature: 91.47834
+#     hdc1000_f_temperature: 38.04321
+#     ccs811_eCO2: 426
+#     ccs811_tVOC: 3
+#     bmp280_c_temperature: 32.87
+#     bmp280_pressure: 99783
+#     bmp280_mm_pressure: 748.4338
+#     bmp280_altitude: 129.0936
+#     ****************************************************************************************************
+#     """
+#     i2c = I2C(scl=Pin(18), sda=Pin(19), freq=100000)
+#     cjmcu_8128 = CJMCU_8128(i2c)
 
 #     while True:
 #         if cjmcu_8128.data_ready():
