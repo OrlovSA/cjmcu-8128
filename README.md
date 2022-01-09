@@ -2,9 +2,15 @@
 Tested on ESP32, Default pin scl-18, sda-19, gnd-wak-gnd, vcc-3.3v
 
 It is necessary to close contacts: WAK-GND
-
+```python
+    from CCS811 import CCS811
+    from HDC1000 import HDC1000
+    from BMP280 import BMP280
+    from time import sleep
+    from machine import Pin, I2C
+    
+    
     def main():
-        from machine import Pin, I2C
         """
         hdc1000_c_temperature: 33.04352
         hdc1000_f_temperature: 91.47834
@@ -35,6 +41,7 @@ It is necessary to close contacts: WAK-GND
 
 
     main()
+ ```
  ![](https://github.com/OrlovSA/cjmcu-8128/blob/main/CCS811-HDC1080-BMP280.jpg)
     
     
