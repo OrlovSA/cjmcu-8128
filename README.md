@@ -1,5 +1,5 @@
 # cjmcu-8128, BMP280, CCS811, HDC1000 sensors for MicroPython
-Tested on ESP32, Default pin 18, 19
+Tested on ESP32, Default pin scl-18, sda-19
 
 It is necessary to close contacts: WAK-GND
 
