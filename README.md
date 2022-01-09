@@ -34,5 +34,5 @@ Tested on ESP32, Default pin 18, 19
 
     main()
     
-    !(https://github.com/jon/coolproject/raw/master/image/image.png)
+    !(https://github.com/OrlovSA/cjmcu-8128/blob/main/CCS811-HDC1080-BMP280.jpg)
 
