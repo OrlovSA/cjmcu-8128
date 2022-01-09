@@ -10,6 +10,10 @@ from time import sleep
 from machine import Pin, I2C
 
 
+i2c = I2C(scl=Pin(18), sda=Pin(19), freq=100000)
+cjmcu_8128 = CJMCU_8128(i2c)
+    
+    
 def main():
     """
     hdc1000_c_temperature: 33.04352
@@ -22,8 +26,6 @@ def main():
     bmp280_mm_pressure: 748.4338
     bmp280_altitude: 129.0936 
     """
-    i2c = I2C(scl=Pin(18), sda=Pin(19), freq=100000)
-    cjmcu_8128 = CJMCU_8128(i2c)
 
     while True:
         if cjmcu_8128.data_ready():
