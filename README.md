@@ -2,10 +2,10 @@
 Tested on ESP32, Default pin scl-18, sda-19, gnd-wak-gnd, vcc-3.3v
 
 It is necessary to close contacts: WAK-GND
+
+
 ```python
-from CCS811 import CCS811
-from HDC1000 import HDC1000
-from BMP280 import BMP280
+from lib.CJMCU_8128 import CJMCU_8128
 from time import sleep
 from machine import Pin, I2C
 
