@@ -5,7 +5,7 @@ It is necessary to close contacts: WAK-GND
 
 
 ```python
-from lib.CJMCU_8128 import CJMCU_8128
+from CJMCU_8128 import CJMCU_8128
 from time import sleep
 from machine import Pin, I2C
 
