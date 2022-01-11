@@ -54,7 +54,7 @@ class CJMCU_8128(object):
 #     """
 #     hdc1000_c_temperature: 33.04352
 #     hdc1000_f_temperature: 91.47834
-#     hdc1000_f_temperature: 38.04321
+#     hdc1000_humidity: 38.04321
 #     ccs811_eCO2: 426
 #     ccs811_tVOC: 3
 #     bmp280_c_temperature: 32.87
